@@ -16,8 +16,8 @@ export const User =  model("User", UserSchema);
 const contentTypes = ['Images', 'video', 'article', 'audio', 'tweet', 'post'];
 const ContentSechema = new Schema({
     link: {type: String, required: true},
-    type: {type: String, enum: contentTypes, required: true},
     title: {type: String, required: true},
+    type: {type: String, enum: contentTypes, required: true},
     tags: [{type: ObjectId,  ref: 'Tag'}],
     userId: {type: ObjectId, ref: "User", reauired: true}
 

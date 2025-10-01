@@ -1,12 +1,15 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import { userRouter } from "./routes/users"
-
+import {contentRouter} from "./routes/content"
+import { brainRouter } from './routes/brain';
 const app = express();
 
 
 app.use(express.json());
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/content", contentRouter);
+app.use("api/v1/brain", brainRouter);
 
 
 

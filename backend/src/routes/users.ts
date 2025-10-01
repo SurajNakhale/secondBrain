@@ -67,7 +67,7 @@ userRouter.post("/signin", async (req, res)=>{
         username: username,
     })
 
-    console.log(userExist);
+    // console.log(userExist);
     
     if(userExist){
         const passwordMatch =await bcrypt.compare(password, userExist.password);
