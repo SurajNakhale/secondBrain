@@ -36,7 +36,7 @@ export const Tag = model("Tag", tagSchema);
 
 // link Schema
 const linkSchema = new Schema({
-    hash: {type: String, required: true},
+    token: {type: String, required: true},
     userId: {type: ObjectId, ref: 'User' , required: true}
 })
 
