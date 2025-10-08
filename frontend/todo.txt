@@ -1,0 +1,2 @@
+create content modal should be close after clicking outside.
+create reacthook or onoutside hook

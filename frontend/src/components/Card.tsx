@@ -2,7 +2,7 @@
 import { Xicon } from "../icons/Xicon"
 import { Shareicon } from "../icons/Shareicon"
 import { Deleteicon } from "../icons/Deleteicon"
-
+import { Yticon } from "../icons/Yticon"
 interface cardProps {
     title: string;
     link: string;
@@ -13,12 +13,13 @@ interface cardProps {
 export function Card({title, link, type}: cardProps){
 
     return <div >
-        <div className=" px-4 py-2 max-w-72 rounded-md border-2 border-gray-100">
+        <div className=" px-4 py-2 max-w-72 rounded-md border-2 bg-white border-gray-100">
 
         <div className="flex justify-between">
             <div className="flex items-center gap-2 font-normal">
                 <div className="text-gray-400">
-                    <Xicon />
+                    {type === "twitter" && <Xicon />}
+                    {type === "youtube" && <Yticon />}
                 </div>
                 {title}
             </div>
