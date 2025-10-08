@@ -1,20 +1,27 @@
+import type { ReactElement } from "react";
+
 interface Buttoninterface {
     title: string;
-    size: "lg" | "md" | "sm";
-
-
+    variant: "Primary" | "Secondary";
+    startIcon?: ReactElement;
+    onClick?: ()=> void;
 }
 
 
-const sizeStyles ={
-    "lg": "px-16 py-4 text-xl",
-    "md": "px-6 py-3 text-md",
-    "sm": "px-4 py-2 text-sm"
+const variantclasses ={
+    "Primary": "bg-blue-800 text-white",  
+    "Secondary": "bg-blue-100 text-blue-800"
+    
 }
-export function Button(props: Buttoninterface){
-        return <button className={sizeStyles[props.size] + " bg-red-400" + " rounded-md" + " mx-1"}>
-            {props.title}
+
+const defaultStyles = "px-3 py-2 rounded-md flex items-center justify-center gap-x-2 cursor-pointer";
+
+export function Button({title , variant, startIcon, onClick}: Buttoninterface){
+    return <button onClick={onClick} className={variantclasses[variant] + " " + defaultStyles}>
+            {startIcon}
+            {title}
             </button>
+            
     
 }
 
