@@ -17,11 +17,15 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/mongoose": "^5.11.96",
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.1",
     "typescript": "^5.9.2",
     "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19"
   }
 }

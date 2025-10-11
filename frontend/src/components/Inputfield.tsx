@@ -1,11 +1,11 @@
 
 interface inputProps {
     placeholder: string;
-    onChange?: ()=> void;
+    reference?: any ;
 }
 
-export function Inputfield({placeholder, onChange}: inputProps){
+export function Inputfield({placeholder, reference}: inputProps){
     return <div>
-        <input type="text" className="px-4 py-2 border rounded-md m-1.5" placeholder={placeholder} onChange={onChange}/>
+        <input ref={reference} type="text" className="px-4 py-2 border rounded-md m-1.5" placeholder={placeholder} />
     </div>
 } 
