@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { BACKEND_URL } from "../../config";
 import axios from "axios";
 
-export function useContent(){
-    const [contens, setContents] = useState([]);
+export  function useContent(){
+    const [contents, setContents] = useState([]);
 
     useEffect(()=>{
-        axios.get(`${BACKEND_URL}/api/v1/contents`,{
+        axios.get(`${BACKEND_URL}/api/v1/content`,{
             headers:{
-                "Authorization": localStorage.getItem("token")
+                Authorization: localStorage.getItem("token")
             }
         }).
         then((response)=>{
@@ -16,5 +16,5 @@ export function useContent(){
         })
     }, [])
 
-    return contens;
+    return contents;
 }
