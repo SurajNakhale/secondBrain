@@ -3,6 +3,10 @@ import { Xicon } from "../icons/Xicon"
 import { Shareicon } from "../icons/Shareicon"
 import { Deleteicon } from "../icons/Deleteicon"
 import { Yticon } from "../icons/Yticon"
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { BACKEND_URL } from "../../config";
+
 interface cardProps {
     title: string;
     link: string;
@@ -11,6 +15,27 @@ interface cardProps {
 
 
 export function Card({title, link, type}: cardProps){
+const navigate = useNavigate();
+
+    async function handleDelete(){
+        const token = localStorage.getItem("token");
+        if(!token){
+            alert("please login first");
+            navigate("/");
+            return;
+        }
+
+         try {
+            const response = await axios.get(`${BACKEND_URL}/api/v1/content/${title}`);
+            // Handle successful response (e.g., remove content from the UI)
+            if(response.status == 200){
+                console.log("content deleted successfully");
+            }
+        } catch (error) {
+            console.error("Error deleting content:", error);
+            alert("Something went wrong while deleting the content.");
+        }
+    }
 
     return <div >
         <div className=" px-4 py-2 max-w-72 rounded-md border-2 bg-white border-gray-100">
@@ -27,7 +52,10 @@ export function Card({title, link, type}: cardProps){
                 <a href={link} target="_blank">
                 <Shareicon />
                 </a>
-                <Deleteicon />
+                <div onClick={handleDelete}>
+                <Deleteicon/>
+                </div>
+                
             </div>
         </div>
 

@@ -8,16 +8,21 @@ import { Shareicon } from '../icons/Shareicon'
 import { CreateContentModal } from '../components/CreateContentModal'
 import { useState } from 'react'
 import { Sidebar } from '../components/Sidebar'
+import { useContent } from '../hooks/useContent'
 
 export function Dashboard(){
       const [modalOpen, setModalOpen] = useState(false);
+      const contents = useContent();
+
+
 
     return <div>
-            <Sidebar />
-          <div className='ml-68 min-h-screen bg-slate-50'>
+                <Sidebar />
                 <CreateContentModal open={modalOpen} onClose={()=>{
                   setModalOpen(false);
                 }} />
+
+          <div className='ml-62 min-h-screen bg-slate-50'>
         
               <div className='p-4'>
     
@@ -29,8 +34,11 @@ export function Dashboard(){
                 </div>
                 
                 <div className='flex gap-6 mt-6'>
-                  <Card title='Rick rubin on creativity' link='https://www.youtube.com/watch?v=36L9cYkHyZM' type='youtube'/>
-                  <Card title='Twitter tweet' link='https://twitter.com/username/status/807811447862468608' type='twitter'/>
+                  {contents.map(({ type, title, link })=> <Card 
+                          title={title} 
+                          link={link}
+                          type={type}
+                          /> )}
                 </div>
               </div>
           </div>

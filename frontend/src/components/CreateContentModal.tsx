@@ -35,7 +35,7 @@ export function CreateContentModal({ open, onClose }: CreateContentModalProps) {
                 { title, link, type },
                 {
                     headers: {
-                        token,
+                        Authorization: token,
                     },
                 }
             );
