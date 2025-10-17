@@ -21,18 +21,26 @@ export function Signup(){
         })
 
         navigate("/signin");
-        
+
         alert("you are signup")
         
     }
     return <div className="h-screen w-screen items-center justify-center flex flex-col bg-slate-100 ">
-        <div className="bg-white p-4 rounded-md">
-            <div className="text-center font-bold pb-4">
+        <div className="bg-white p-4 rounded-md hover:shadow-md ">
+            <div className="text-center font-bold pb-4 shadow-2xs text-blue-800">
                 Signup
             </div>
-            <div>
-                <Inputfield reference={usernameRef} placeholder="username" />
-                <Inputfield reference={passwordRef} placeholder="password" />
+            <div className="">
+                <div className="font-medium text-sm">
+                                Username:
+                    <Inputfield reference={usernameRef} placeholder="username" />      
+                </div>
+                    
+                <div className="font-medium text-sm">
+                    Passsword:
+                    <Inputfield reference={passwordRef} placeholder="password" />
+                </div>
+               
             </div>
 
             <div className="p-1">

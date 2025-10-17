@@ -13,7 +13,7 @@ export const User =  model("User", UserSchema);
 
 
 //content sechma
-const contentTypes = ['Images', 'video', 'article', 'audio', 'tweet', 'post'];
+const contentTypes = ['Images','youtube', 'video', 'article', 'audio', 'twitter', 'post'];
 const ContentSechema = new Schema({
     link: {type: String, required: true},
     title: {type: String, required: true},

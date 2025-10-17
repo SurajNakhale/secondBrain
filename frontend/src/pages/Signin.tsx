@@ -26,7 +26,7 @@ export function Signin(){
             alert("you are signin")
             
         }
-    return <div className="h-screen w-screen items-center justify-center flex flex-col bg-slate-100 ">
+    return <div className="h-screen w-screen items-center justify-center flex flex-col bg-slate-100 hover: shadow-2xl">
         <div className="bg-white p-4 rounded-md">
             <div className="text-center font-bold pb-4">
                 Signin
