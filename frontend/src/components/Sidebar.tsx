@@ -10,7 +10,7 @@ export function Sidebar(){
                 <Logo />
             </div>
             <div className="font-extrabold text-shadow-md text-md px-2">
-                VaultEos
+                SecondBrain
             </div>
         </div>
         <div className="mt-6">
